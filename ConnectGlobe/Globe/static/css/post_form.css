@@ -1,0 +1,77 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+  font-family: oswald;
+}
+
+.contain {
+  max-width: 900px;
+  height: auto;
+  background: rgba(255,255,255,1.0);
+  margin: 5px auto;
+  padding: 30px;
+  color: #2e4ead;
+  font-weight: 900;
+}
+
+h5 {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(to left, #12e3dc, #2e4ead);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input[type="text"], input[type="file"] {
+   width: 100%;
+   box-sizing: border-box;
+   padding: 12px 10px;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 1px solid skyblue;
+   border-radius: 5px;
+   margin-left: 0px;
+   margin-top: 1%;
+   margin-bottom: 3%;
+   font-size: 18px;
+   font-weight: bold;
+   outline: none;
+   transition: all 0.5s;
+}
+
+textarea{
+   padding: 12px 9px;
+   margin-top: 1%;
+   margin-bottom: 3%;
+   border: 5px solid #2e4ead;
+   font-weight: bold;
+   font-size: 18px;
+   background: transparent;
+}
+
+input:focus, textarea:focus {
+  border: 3px solid #1184a8;
+}
+
+.submit {
+  width: 100%;
+  text-align: center;
+}
+
+.submit .btn {
+  background: linear-gradient(to left, #12e3dc, #2e4ead);
+  padding: 12px 85px;
+  font-size: 19px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 900;
+  margin-top: 2%;
+  border-radius: 10px;
+}

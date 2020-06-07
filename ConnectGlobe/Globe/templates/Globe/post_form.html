@@ -1,0 +1,29 @@
+{% extends 'Globe/Base1.html'%}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block content %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post_form.css' %}">
+</head>
+<body>
+<div class="main-container">
+   <div class="contain">
+     <h5>POST REPORT</h5>
+
+     <form method="POST" enctype="multipart/form-data" >
+         {% csrf_token %}
+
+         {{ form|crispy }}
+         <div class="submit">
+            <input class="btn" type="submit" value="SUBMIT"/>
+         </div>
+     </form>
+       {% for messages in messages %}
+       <h3>{{messages}}</h3>
+       {% endfor %}
+   </div>
+</div>
+</body>
+</html>
+{% endblock %}

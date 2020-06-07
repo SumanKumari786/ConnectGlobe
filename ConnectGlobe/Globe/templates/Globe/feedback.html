@@ -1,0 +1,31 @@
+{% extends 'Globe/basic.html'%}
+{% load static%}
+{% block content %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/feedback.css' %}">
+</head>
+<body background="{% static 'images/p8.jpeg' %}">
+   <div class="contain">
+     <h5>Contact Us</h5>
+
+     <form method="post">
+     <div class="login">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="YOUR NAME" required class="input"/>
+        <input type="email" name="email" placeholder="YOUR EMAIL" required class="input"/>
+     </div>
+     <div class="msg">
+        <textarea name="message" class="area" placeholder="LEAVE A MESSAGE" required></textarea>
+     </div>
+     <div class="submit">
+        <input class="btn" type="submit" value="SUBMIT"/>
+     </div>
+         {% for messages in messages %}
+        <h5>{{messages}}</h5>
+        {% endfor %}
+     </form>
+   </div>
+</body>
+</html>
+{% endblock %}

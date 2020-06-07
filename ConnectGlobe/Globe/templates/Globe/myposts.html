@@ -1,0 +1,50 @@
+{% extends 'Globe/Base1.html'%}
+{% load static%}
+{% block content %}
+
+<center><h2 style="color:#2e4ead;">MY POSTS ({{ posts.paginator.count }})</h2></center>
+<div class="item">
+
+	{% for post in posts %}
+	<div class="col-md-12">
+		<h3 class="col-md-8" style="color: #2e4ead;"><a href="{% url 'post_detail' post.id%}">{{post.title}}</a></h3>
+		<h3 class="col-md-4 text-right">({{post.category}})</h3>
+	</div><br/><br/>
+	<div style="margin-left:3%;">
+		<h3><u>Content</u>:-   {{post.content}}</h3>
+		{% if post.file %}
+			<a href="{{post.file.url}}" class="btn btn-info" target="_blank" >Click to open</a>
+		{% endif%}
+
+		<h4>{{post.date_posted}}</h4>
+		<div class="line"></div>
+
+		{% endfor %}
+
+
+		{% if posts.has_previous %}
+			<a href="?page=1" class="btn btn-primary">First</a>
+			<a href="?page={{ posts.previous_page_number}}" class="btn btn-primary">Previous</a>
+		{% endif %}
+
+		{% for num in posts.paginator.page_range %}
+			{% if posts.number == num %}
+				<a href="?page={{ num }}" class="btn btn-primary"><strong>{{ num }}</strong></a>
+			{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+				<a href="?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+			{% endif %}
+		{% endfor %}
+
+		{% if posts.has_next %}
+			<a href="?page={{ posts.next_page_number}}" class="btn btn-primary">Next</a>
+			<a href="?page={{ posts.paginator.num_pages }}" class="btn btn-primary">Last</a>
+		{% endif %}
+	</div>
+</div>
+				<!--{{ posts.number }}
+				{{ posts.paginator.count }}
+				{{ posts.paginator.num_pages }}
+				{{ posts.paginator.page_range }}-->
+{% endblock %}
+
+

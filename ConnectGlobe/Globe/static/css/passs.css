@@ -1,0 +1,129 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+#body {
+   font-family: 'Baloo Thambi 2', cursive;
+   width: 100%;
+   height: 100vh;
+   margin-top: 10px;
+}
+
+.login-form {
+   width: 32%;
+   box-sizing: border-box;
+   padding: 40px;
+   margin-left: 25%;
+   transition: 0.5s;
+   background: ;
+   border-radius: 10px;
+}
+
+@media only screen and (max-width: 599px){
+    .login-form
+    {
+       margin: 5% 0 0 8%;
+       width: 80%;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .login-form
+    {
+       margin: 5% 0 0 9%;
+       width: 70%;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    .login-form
+    {
+       margin: 5% 0 0 8%;
+       width: 60%;
+    }
+}
+
+
+@media only screen and (min-width : 768px){
+    .login-form
+    {
+       margin: 5% 0 0 16%;
+       width: 60%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .login-form
+    {
+       margin: 5% 0 0 17%;
+       width: 45%;
+    }
+}
+
+
+@media only screen and (min-width : 1024px){
+    .login-form
+    {
+       margin: 5% 0 0 29%;
+       width: 40%;
+    }
+}
+
+@media only screen and (min-width : 1350px){
+    .login-form
+    {
+       margin: 5% 0 0 26%;
+       width: 33%;
+    }
+}
+
+
+#head1 {
+   margin: 0 0 20px 0;
+   font-size: 35px;
+   text-align: center;
+   color: 000;
+   text-transform: uppercase;
+   font-family: 'Baloo Thambi 2', cursive;
+}
+
+.login-form input {
+   display: block;
+   width: 100%;
+   padding: 20px 20px;
+   box-sizing: border-box;
+   margin-bottom: 20px;
+   border-radius: 30px 6px;
+   outline: none;
+   font-size: 18px;
+   color: ;
+   border: none;
+   border: 1px solid #333;
+}
+
+.login-form input[type="password"] {
+   color: #000;}
+
+.login-form input[type="email"] {
+   color: #000; }
+
+.login-form input::placeholder {
+   color: #333;
+   font-size: 18px;
+   font-family: 'Lobster', cursive;
+}
+
+.login-form input[type="submit"] {
+   color: white;
+   font-family: 'Baloo Thambi 2', cursive;
+   font-size: 20px;
+   background: ;
+   border: none;
+   border-radius: 6px 30px;
+   cursor: pointer;
+   font-weight: bold;
+   margin-top: 3%;
+}
+
+

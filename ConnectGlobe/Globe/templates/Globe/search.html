@@ -1,0 +1,36 @@
+{% extends 'Globe/Base1.html'%}
+{% load static%}
+{% load humanize%}
+{% block content %}
+	<center style="color: #2e4ead;"><h1>Search Results</h1></center>
+
+	{% if posts|length < 1 %}
+		<h1>No search Results </h1><br>
+		<h2>Your Search query -- <i>{{ query }}</i> -- did not match any documents.</h2><br>
+		<h2>Suggestions:</h2>
+		<h3><ul>
+			<li style="list-style-type:disc;">Make sure that all words are spelled correctly.</li>
+			<li style="list-style-type:disc;">Try different keywords.</li>
+			<li style="list-style-type:disc;">Try more general keywords.</li>
+		</ul></h3>
+	{% endif %}
+	{% for post in posts %}
+		<div class="col-md-12">
+
+			<h3 class="col-md-8">{{post.title}}</a></h3>
+			<h3 class="col-md-4 text-right">({{post.category}})</h3>
+		</div><br/><br/>
+		<div style="margin-left:3%;">
+			<h3 style="text-align:justify; "><u>Content</u>:-   {{post.content}}</h3>
+			{% if post.file %}
+				<a href="{{post.file.url}}" target="_blank" class="btn btn-info">Click to open</a>
+			{% endif%}
+			<blockquote class="blockquote">
+            	<footer class="blockquote-footer">by <cite title="Source Title">{{post.name|capfirst}} ({{post.date_posted|naturaltime}})</cite></footer>
+        	</blockquote>
+		</div>
+			<div class="line"></div>
+	{% endfor %}
+{% endblock %}
+
+

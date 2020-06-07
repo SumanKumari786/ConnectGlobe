@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>Connect Globe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <script src="https://kit.fontawesome.com/9ae01dec74.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="/index" class="text-black h2 mb-0" style="text-decoration:none;">Connect
+                        Globe<span class="text-primary">.</span> </a></h1>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li><a href="/index" class="nav-link">Home</a></li>
+                            <li><a href="/view_status" class="nav-link">Posts</a></li>
+                            <li><a href="/dev_team" class="nav-link">DevelopmentTeam</a></li>
+                            <li><a href="/about" class="nav-link">About</a></li>
+                            <li><a href="/post/new" class="nav-link">Report A Post</a></li>
+                            {% if request.user.is_authenticated %}
+
+                            <li><a href="#" class="nav-link">Hello, {{request.user.username }}</a></li>
+
+                            <li><a href="/logout" class="nav-link">Logout</a></li>
+                            {% else %}
+
+                            <li><a href="/login" class="nav-link">Login</a></li>
+                            <li><a href="/Register" class="nav-link">Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
+                        href="#" class="site-menu-toggle js-menu-toggle text-black"><span
+                        class="icon-menu h3"></span></a></div>
+
+            </div>
+        </div>
+
+    </header>
+
+
+    {%block content%} {% endblock %}
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h2 class="footer-heading mb-4">Website Feature</h2>
+                            <p>Helping write the script of the future by serving developers and all technologists to help solve coding problems, develop new skills.</p>
+                        </div>
+                        <div class="col-md-3 ml-auto">
+
+                            <ul class="list-unstyled">
+                                <li ><a href="/post/new" style="text-decoration:none;">Ask Technical Questions</a></li>
+                                <li><a href="/post/new" style="text-decoration:none;">Answer Technical Questions</a></li>
+                                <li><a href="/feedback" style="text-decoration:none;">Contact Us</a></li>
+                                <li><a href="/dev_team" style="text-decoration:none;">Development Team</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
+
+    </div> <!-- .site-wrap -->
+
+<script src="{% static 'javas/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'javas/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'javas/jquery-ui.js' %}"></script>
+<script src="{% static 'javas/popper.min.js' %}"></script>
+<script src="{% static 'javas/bootstrap.min.js' %}"></script>
+<script src="{% static 'javas/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'javas/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'javas/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'javas/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'javas/aos.js' %}"></script>
+<script src="{% static 'javas/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'javas/jquery.sticky.js' %}"></script>
+
+<script src="{% static 'javas/typed.js' %}"></script>
+
+
+<script src="{% static 'javas/main.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends 'Globe/Base1.html'%}
+{% load static%}
+{% load humanize%}
+{% block content %}
+<center style="color: #2e4ead;"><h1>VIEW_POST</h1></center>
+
+<div class="col-md-12">
+	<h3 class="col-md-8" >{{object.title}}</h3>
+	<h3 class="col-md-4 text-right">({{object.category}})</h3>
+</div><br/><br/>
+
+<div style="margin-left:3%;">
+	<h3 style="text-align:justify;"><u>Content</u>:-   {{object.content}}</h3>
+	<a href="/Globe/{{post.slug}}" class="btn btn-primary">Continue Reading</a>
+
+	{% if object.file %}
+		<!--<embed src="object.file.pdf" type="application/pdf" width="10%" height="60px" /><br>-->
+		<a href="{{object.file.url}}" class="btn btn-info" target="_blank" >Click to open</a>
+	{% endif%}
+
+	<blockquote class="blockquote">
+		<footer class="blockquote-footer">by <cite title="Source Title">{{object.name|capfirst}} ({{post.date_posted|naturaltime}})</cite></footer>
+	</blockquote>
+
+	{% if object.name == user %}
+		<a class="btn btn-success" href="{% url 'post_update' object.id%}" >UPDATE</a>
+		<a class="btn btn-danger" href="{% url 'post_delete' object.id%}" >DELETE</a>
+	{% endif %}
+	<br>
+</div>
+
+
+{% endblock %}
