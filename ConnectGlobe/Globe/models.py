@@ -50,10 +50,18 @@ def update_my_profile(sender, instance, created, **kwargs):
 
 class Post(models.Model):
     objects = models.Manager()
+    CATEGORY_CHOICES = (
+        ("Django", "Django"),
+        ("Python", "Python"),
+        ("Java", "Java"),
+        ("C++", "C++"),
+        ("C", "C"),
+        ("Database", "Database"),
+    )
     name = models.ForeignKey(User, on_delete=models.PROTECT, related_name='name')
     email = models.EmailField(max_length=100)
     title = models.CharField(max_length=100, blank=False, null=False)
-    category = models.CharField(max_length=100, blank=False, null=False)
+    category = models.CharField(choices=CATEGORY_CHOICES, default='Django', max_length=100, blank=False, null=False)
     content = models.TextField(blank=False, null=False)
     file = models.FileField(upload_to='project_files', null=True, blank=True)
     slug = models.CharField(max_length=130)
